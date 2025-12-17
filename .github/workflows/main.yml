@@ -2,8 +2,8 @@ name: Daily News Generator
 
 on:
   schedule:
-    - cron: '0 22 * * *' # 日本時間の朝7時 (UTC 22時)
-  workflow_dispatch: # 手動実行ボタン（テスト用）
+    - cron: '0 22 * * *' # 日本時間の朝7時
+  workflow_dispatch: # 手動実行ボタン
 
 permissions:
   contents: write
@@ -21,7 +21,7 @@ jobs:
 
       - name: Install dependencies
         run: |
-          pip install requests beautifulsoup4 lxml　gtts
+          pip install requests beautifulsoup4 lxml gtts
 
       - name: Run script
         run: python main_cloud.py
